@@ -1,8 +1,8 @@
 <template>
   <div class="phone_title_content" :style="style" :class="{'hasInfoBare': showInfoBare}" >
     <InfoBare v-if="showInfoBare" />
-    <div class="phone_title" :style="{backgroundColor: backgroundColor}">
-      <button class="btn-back" @click.stop="back"><i class="fas fa-angle-left" @click.stop="back"></i></button>
+    <div class="phone_title" :style="style">
+      <button class="btn-back" :style="{color: color}" @click.stop="back"><i class="fas fa-angle-left" @click.stop="back"></i></button>
       {{title}}
     </div>
   </div>
@@ -20,7 +20,7 @@ export default {
     style () {
       return {
         backgroundColor: this.backgroundColor || this.themeColorTitle,
-        color: this.color || '#FFF'
+        color: this.color || '#000'
       }
     }
   },
@@ -39,6 +39,9 @@ export default {
       default: true
     },
     backgroundColor: {
+      type: String
+    },
+    color: {
       type: String
     }
   }

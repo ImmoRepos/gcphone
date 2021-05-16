@@ -27,9 +27,9 @@ export default {
     onSelect (itemSelect) {
       if (this.ignoreControls === true) return
       this.ignoreControls = true
-      Modal.CreateModal({choix: [...itemSelect.subMenu, {title: 'Cancelar'}]}).then(rep => {
+      Modal.CreateModal({choix: [...itemSelect.subMenu, {title: 'Abbrechen'}]}).then(rep => {
         this.ignoreControls = false
-        if (rep.title === 'Cancelar') return
+        if (rep.title === 'Abbrechen') return
         this.$phoneAPI.callEvent(rep.eventName, rep.type)
         this.$router.push({name: 'home'})
       })

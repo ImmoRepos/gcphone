@@ -187,8 +187,14 @@ class PhoneAPI {
   onupdateBankbalance (data) {
     store.commit('SET_BANK_AMONT', data.banking)
   }
+  onupdateIban (data) {
+    store.commit('SET_IBAN', data.iban)
+  }
   onupdateBourse (data) {
     store.commit('SET_BOURSE_INFO', data.bourse)
+  }
+  onupdateVehicles (data) {
+    store.commit('SET_VEHICLES', data.vehicles)
   }
   // Call
   async startCall (numero, extraData = undefined) {
@@ -213,6 +219,10 @@ class PhoneAPI {
 
   async notififyUseRTC (use) {
     return this.post('notififyUseRTC', use)
+  }
+
+  async blockNumber (numero) {
+    return this.post('blockNumber', { numero })
   }
 
   onwaitingCall (data) {

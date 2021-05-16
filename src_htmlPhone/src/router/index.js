@@ -29,6 +29,8 @@ import Parametre from '@/components/parametre/Parametre'
 import Bank from '@/components/Bank/Bank'
 import Bourse from '@/components/Bourse/Bourse'
 import Photo from '@/components/Photo/Photo'
+import Garage from '@/components/garage/Garage'
+import GarageView from '@/components/garage/GarageView'
 
 import App9GAG from '@/components/App9GAG'
 Vue.use(Router)
@@ -129,6 +131,14 @@ export default new Router({
       path: '/9gag',
       name: '9gag',
       component: App9GAG
+    }, {
+      path: '/garage',
+      name: 'garage',
+      component: Garage
+    }, {
+      path: '/garage/:plate',
+      name: 'garage.view',
+      component: GarageView
     }, {
       path: '*',
       redirect: '/'

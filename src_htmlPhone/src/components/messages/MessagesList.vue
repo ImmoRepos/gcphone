@@ -1,6 +1,6 @@
 <template>
   <div style="width: 326px; height: 743px;" class="screen">
-    <list style="color: black" :list='messagesData' :disable="disableList" :title="IntlString('APP_MESSAGE_TITLE')" @back="back" @select="onSelect" @option='onOption'></list>
+    <list style="color: black" backgroundColor="rgb(11, 124, 111)" color="#FFF" :list='messagesData' :disable="disableList" :title="IntlString('APP_MESSAGE_TITLE')" @back="back" @select="onSelect" @option='onOption'></list>
   </div>
 </template>
 

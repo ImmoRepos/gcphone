@@ -1,11 +1,11 @@
 <template>
   <div class="phone_app">
-    <PhoneTitle :title="title" :showInfoBare="showInfoBare" v-if="showHeader" @back="back"/>
+    <PhoneTitle :title="title" :backgroundColor="backgroundColor" :color="color" :showInfoBare="showInfoBare" v-if="showHeader" @back="back"/>
     <!-- <InfoBare v-if="showInfoBare"/>
     <div v-if="title !== ''" class="phone_title" v-bind:style="styleTitle()">{{title}}</div>
     -->
     <div style="width: 324px; height: 595px;" class="phone_content elements">
-        <div class="element" v-for='(elem, key) in list' 
+        <div class="element" v-for='(elem, key) in list'
           v-bind:key="elem[keyDispay]"
           v-bind:class="{ select: key === currentSelect}"
           @click.stop="selectItem(elem)"

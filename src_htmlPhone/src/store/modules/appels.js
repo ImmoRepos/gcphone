@@ -66,6 +66,9 @@ const actions = {
   resetAppels ({ commit }) {
     commit('SET_APPELS_HISTORIQUE', [])
     commit('SET_APPELS_INFO', null)
+  },
+  blockNumber ({ commit }, { numero }) {
+    PhoneAPI.blockNumber(numero)
   }
 }
 

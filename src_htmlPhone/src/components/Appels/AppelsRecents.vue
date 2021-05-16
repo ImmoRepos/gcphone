@@ -66,7 +66,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['startCall', 'appelsDeleteHistorique', 'appelsDeleteAllHistorique', 'addContact']),
+    ...mapActions(['startCall', 'appelsDeleteHistorique', 'appelsDeleteAllHistorique', 'addContact', 'blockNumber']),
     getContact (num) {
       const find = this.contacts.find(e => e.number === num)
       return find
@@ -94,7 +94,8 @@ export default {
         {id: 1, title: this.IntlString('APP_PHONE_DELETE'), icons: 'fa-trash', color: 'orange'},
         {id: 2, title: this.IntlString('APP_PHONE_DELETE_ALL'), icons: 'fa-trash', color: 'red'},
         {id: 3, title: this.IntlString('APP_PHONE_CANCEL'), icons: 'fa-undo'},
-        {id: 4, title: this.IntlString('APP_PHONE_ADD'), icons: 'fa-undo'}
+        {id: 4, title: this.IntlString('APP_PHONE_ADD'), icons: 'fa-undo'},
+        {id: 5, title: this.IntlString('APP_PHONE_BLOCK'), icons: 'fa-ban', color: 'red'}
       ]
       if (isValid === true) {
         choix = [{id: 0, title: this.IntlString('APP_PHONE_CALL'), icons: 'fa-phone'}, ...choix]
@@ -113,6 +114,10 @@ export default {
           break
         case 4 :
           this.$router.push({name: 'contacts.view', params: {id: 0, number: numero}})
+          break
+        case 5:
+          this.blockNumber({ numero })
+          break
       }
     },
     async onEnter () {
